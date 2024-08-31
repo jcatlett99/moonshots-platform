@@ -3,10 +3,10 @@
   <header>
     <div>
       <div class="widthconstrainer">
-      <h2>Platform for Cosmic Integrationalism</h2>
+        <h2>Platform for Cosmic Integrationalism</h2>
+      </div>
     </div>
-    </div>
-    
+
     <nav>
       <div class="widthconstrainer">
         <router-link to="/">Home</router-link>
