@@ -25,25 +25,28 @@ export default {
 <style scoped>
 
 .section{
-    background-color: var(--main-darkest-shade);
-    border-radius: 1rem;
-    border: 1px solid var(--main-mid-shade);
+    position: relative;
+    z-index: 1;
+    box-shadow: var(--shadow);
+    background-color: var(--darkest-shade);
+    border-radius: .5rem;
+    border: 1px solid var(--mid-shade);
 
 }
 
 .content-section {
     padding: 0.5rem 1rem;
-    color: var(--main-light-shade);
+    color: var(--light-shade);
     font-family: var(--font-body);
 }
 
 .content-header {
-    background-color: var(--main-light-shade);
-    color: var(--main-darkest-shade);
-    border-radius: 1rem 1rem 0 0;
+    background-color: var(--light-shade);
+    color: var(--darkest-shade);
+    border-radius: .5rem .5rem 0 0;
     font-family: var(--font-header);
     padding: 0.5rem 1rem;	
-    border-bottom: 1px solid var(--main-mid-shade);
+    border-bottom: 1px solid var(--mid-shade);
 }
 
 </style>

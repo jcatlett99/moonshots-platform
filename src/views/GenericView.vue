@@ -67,7 +67,7 @@ export default {
     list-style: none;
 }
 
-@media screen and (max-width: var(--mobile-breakpoint)) {
+@media screen and (max-width: 768px) {
     .flex{
         flex-direction: column;
     }
