@@ -1,5 +1,6 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
+import ResearcherView from "../views/ResearcherView.vue";
 
 const routes = [
   {
@@ -27,6 +28,11 @@ const routes = [
     component: function () {
       return import(/* webpackChunkName: "about" */ "../views/GenericView.vue");
     },
+  },
+  {
+    path: "/researcher/:id", // Dynamic segment
+    name: "researcher",
+    component: ResearcherView,
   },
 ];
 
