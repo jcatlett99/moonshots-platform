@@ -2,8 +2,14 @@
 
   <header>
     <div>
-      <div class="widthconstrainer">
-        <h2>Platform for Cosmic Integrationalism</h2>
+      <div class="widthconstrainer flex">
+        <router-link to="/" class="websitetitle flex">
+          <img src="@/assets/logo-cosmic-transparent.png" alt="Cosmic integrationalists logo">
+          <h2>
+            Platform for Cosmic Integrationalism
+          </h2>
+        </router-link>
+      
       </div>
     </div>
 

@@ -3,19 +3,23 @@
 :root{
     --old-text-color: #2c3e50;
 
-    --main-darkest-shade: #1f2027;
-    --main-dark-shade: #36343f;
-    --main-mid-shade: #685f80;
-    --main-light-shade: #ccc1df;
-    --main-lightest-shade: #f6ecfd;
+    --darkest-shade: #080808;
+    --dark-shade: #141418;
+    --mid-dark-shade: #36343f;
+    --mid-shade: #685f80;
+    --mid-light-shade: #8980a1;
+    --light-shade: #ccc1df;
+    --lightest-shade: #faf4ff;
 
-    --main-accent-light: #78ff8f;
-    --main-accent-dark: #007009;
+    --accent-light: #78ff8f;
+    --accent-dark: #007009;
+
+    --shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
     
     --font-header: 'Merriweather', serif;
     --font-body: 'Courier Prime', monospace; 
 
-    --main-text-color: var(--main-light-shade);
+    --text-color: var(--light-shade);
 
     --max-width: 1200px;
     --standard-padding: 1rem 2rem;
@@ -23,21 +27,21 @@
     --mobile-breakpoint: 768px;
 
     /* Dark mode */
-    /* --main-shade-1: var(--main-darkest-shade);
-    --main-shade-2: var(--main-dark-shade);
-    --main-shade-3: var(--main-mid-shade);
-    --main-shade-4: var(--main-light-shade);
-    --main-shade-5: var(--main-lightest-shade);
-    --accent-color: var(--main-accent-light); */
+    /* --shade-1: var(--darkest-shade);
+    --shade-2: var(--dark-shade);
+    --shade-3: var(--mid-shade);
+    --shade-4: var(--light-shade);
+    --shade-5: var(--lightest-shade);
+    --accent-color: var(--accent-light); */
 
 
     /* Light mode */
-    /* --main-shade-1: var(--main-lightest-shade);
-    --main-shade-2: var(--main-light-shade);
-    --main-shade-3: var(--main-mid-shade);
-    --main-shade-4: var(--main-dark-shade);
-    --main-shade-5: var(--main-darkest-shade);
-    --accent-color: var(--main-accent-dark); */
+    /* --shade-1: var(--lightest-shade);
+    --shade-2: var(--light-shade);
+    --shade-3: var(--mid-shade);
+    --shade-4: var(--dark-shade);
+    --shade-5: var(--darkest-shade);
+    --accent-color: var(--accent-dark); */
 
 }
 
@@ -62,9 +66,9 @@ body > * {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
-    background-color: var(--main-dark-shade);
+    background-color: var(--dark-shade);
 
-    color: var(--main-lightest-shade);
+    color: var(--lightest-shade);
 }
 
 body > #app{
@@ -75,6 +79,7 @@ body > #app{
 
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-header);
+    color: var(--lightest-shade);
 }
 
 /* #app {
@@ -85,10 +90,21 @@ header > *, footer{
     padding: var(--standard-padding);
 }
 
+.websitetitle{
+    vertical-align: middle;
+    text-decoration: none;
+    align-items: center;
+}
+
+.websitetitle img{
+    height: 2.5em;
+    width: 2.5em;
+}
+
 header nav {
-    background-color: var(--main-light-shade);
-    border-top: 1px solid var(--main-mid-shade);
-    border-bottom: 1px solid var(--main-mid-shade);
+    background-color: var(--light-shade);
+    border-top: 1px solid var(--mid-shade);
+    border-bottom: 1px solid var(--mid-shade);
 
     display: flex;
     justify-content: center;
@@ -96,31 +112,42 @@ header nav {
 
 header nav a {
     text-decoration: none;
-    color: var(--main-dark-shade);
+    color: var(--dark-shade);
     /* color: #2c3e50; */
+    position: relative;
+}
+
+header nav a:not(:last-child){
+    margin-right: 1rem;
+}
+
+header nav a:not(:first-child){
+    margin-left: 1.5rem;
 }
 
 header nav a:not(:last-child)::after {
+    position: absolute;
     content: '|';
-    color: var(--main-mid-shade) !important;
+    color: var(--mid-shade) !important;
     padding: 0 1rem;
     user-select: none;
     pointer-events: none;
+    font-weight: normal !important;
     /* color: #2c3e50; */
 }
 
 header nav a.router-link-exact-active {
-    color: var(--main-darkest-shade);
+    color: var(--darkest-shade);
     font-weight: bold;
 }
 
 header, footer{
-    background-color: var(--main-darkest-shade);
+    background-color: var(--darkest-shade);
 }
 
 footer{
-    border-top: 1px solid var(--main-mid-shade);
-    border-bottom: 1px solid var(--main-mid-shade);
+    border-top: 1px solid var(--mid-shade);
+    /* border-bottom: 1px solid var(--mid-shade); */
 
     /* display: flex;
     justify-content: center; */
