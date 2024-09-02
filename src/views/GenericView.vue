@@ -50,7 +50,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .flexmain {
     flex: 2;
     padding: 2rem;
@@ -71,5 +71,10 @@ export default {
     .flex{
         flex-direction: column;
     }
+
+    .flexmain{
+        padding: 0.5rem 0;
+    }
+
 }
 </style>

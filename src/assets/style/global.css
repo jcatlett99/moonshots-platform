@@ -181,3 +181,9 @@ p:not(:first-child){
     width: 100%;
     gap: 1rem;
 }
+
+@media screen and (max-width: 768px) {
+    :root{
+        font-size: 90%;
+    }
+}
