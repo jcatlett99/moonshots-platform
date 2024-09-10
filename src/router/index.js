@@ -2,6 +2,7 @@ import { createRouter, createWebHashHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import ResearcherView from "../views/ResearcherView.vue";
 import DisciplineView from "../views/DisciplineView.vue";
+import DebugView from "../views/DebugView.vue";
 
 const routes = [
   {
@@ -40,6 +41,11 @@ const routes = [
     name: "discipline",
     component: DisciplineView,
   },
+  {
+    path: "/debug",
+    name: "debug",
+    component: DebugView,
+  }
 ];
 
 const router = createRouter({

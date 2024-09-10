@@ -17,6 +17,7 @@
       <div class="widthconstrainer">
         <router-link :to="{ name: 'home'}">Home</router-link>
         <router-link :to="{ name: 'about'}">About</router-link>
+        <router-link :to="{ name: 'debug'}">Debug</router-link>
       </div>
     </nav>
   </header>
