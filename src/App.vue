@@ -18,7 +18,7 @@
         <router-link :to="{ name: 'home'}">Home</router-link>
         <router-link :to="{ name: 'about'}">This</router-link>
         <!-- <router-link to="/generic">Generic page</router-link> -->
-        <router-link :to="{ name: 'researcher', params: { id: 0 } }">researcher 0</router-link>
+        <!-- <router-link :to="{ name: 'researcher', params: { id: 0 } }">researcher 0</router-link> -->
       </div>
     </nav>
   </header>

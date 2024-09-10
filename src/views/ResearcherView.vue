@@ -36,8 +36,6 @@ export default {
     },
     methods: {
         async initData() {
-            console.log(this.$route.params.id);
-
             const researcherId = this.$route.params.id;
             this.researcher = Researcher.find(researcherId);
 
@@ -51,9 +49,6 @@ export default {
     created() {
 
         this.initData();
-
-        console.log("data inited");
-        console.log(this.researcher);
         
 
         this.$watch(() => this.$route.params.id, this.initData);

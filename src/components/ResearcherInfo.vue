@@ -7,11 +7,12 @@
         <table>
             <tr>
                 <td>Name:</td>
-                <td>{{ researcher.title }} {{ researcher.initials }} {{ researcher.sname }} </td>
+                <td>{{ researcher.name }}</td>
             </tr>
             <tr>
                 <td>Email:</td>
-                <td>{{ researcher.email }}</td>
+                <td v-if="researcher.email != ''">{{ researcher.email }}</td>
+                <td v-else>No Email Provided</td>
             </tr>
         </table>
         

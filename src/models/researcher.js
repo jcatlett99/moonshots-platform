@@ -1,11 +1,8 @@
 class Researcher{
 
-    constructor(displayname, title, initials, sname, occupation, imageurl, email, associations = [], bioHTML = ""){
+    constructor(displayname, name, occupation, imageurl, email, associations = [], bioHTML = ""){
         this.displayname = displayname;
-
-        this.title = title;
-        this.initials = initials;
-        this.sname = sname;
+        this.name = name
         this.occupation = occupation;
         this.imageurl = imageurl;
         this.email = email;
@@ -16,7 +13,6 @@ class Researcher{
         this.id = Researcher.all.indexOf(this);
 
         console.log(this);
-        
     }
 
     static all = [];
