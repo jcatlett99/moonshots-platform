@@ -1,5 +1,5 @@
 <template :key="researcher.id">
-    <div class="page">
+    <div v-if="researcher" class="page">
         <div class="widthconstrainer">
             <div class="flex">
                 <ContentSection class="flexmain">
