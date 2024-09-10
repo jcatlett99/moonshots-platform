@@ -4,7 +4,7 @@ import router from "./router";
 import "./assets/style/global.css";
 import Seeder from "./seeders/Seeder.js";
 
-console.log(Seeder)
+// console.log(Seeder)
 
 Seeder.seed();
 

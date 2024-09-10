@@ -12,7 +12,7 @@ class Researcher{
         Researcher.all.push(this);
         this.id = Researcher.all.indexOf(this);
 
-        console.log(this);
+        // console.log(this);
     }
 
     static all = [];
