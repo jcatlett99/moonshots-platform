@@ -1,5 +1,5 @@
 <template :key="discipline.id">
-    <div class="page">
+    <div v-if="discipline" class="page">
         <div class="widthconstrainer">
             <div class="flex">
                 <ContentSection class="flexmain">
@@ -52,7 +52,9 @@ export default {
 
         this.initData();        
 
-        this.$watch(() => this.$route.params.id, this.initData);
+        if(this.discipline != null){
+            this.$watch(() => this.$route.params.id, this.initData);
+        }
     },
 };
 
