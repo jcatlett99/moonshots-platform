@@ -32,6 +32,7 @@ export default {
     border-radius: .5rem;
     border: 1px solid var(--mid-shade);
 
+    overflow: hidden;
 }
 
 .content-section {
