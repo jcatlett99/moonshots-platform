@@ -27,7 +27,7 @@ class ResearcherSeeder{
             "R.D.",
             "Heemskerk",
             "Creative Researcher, Computer Scientist & Artist",
-            "https://lh6.googleusercontent.com/A-RltPRcwyia3nOOzq78HPBqGXg4Iw1R0nyyvfRkDYqffaA07GLxcVL216SX5pWrlWL27Esp9Omf5TySSzuXsU78yk-IZKVFzTaEh8zNRY_hdl8ZrGte2pjTQKRIprMG=w1280",
+            "@/assets/researchers/rick.png",
             "r.d.heemskerk@vuw.leidenuniv.nl",
             [
                 "Leiden University",

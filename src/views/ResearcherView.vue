@@ -1,6 +1,4 @@
-
-
-<template>
+<template :key="researcher.id">
     <div class="page">
         <div class="widthconstrainer">
             <div class="flex">
@@ -25,7 +23,6 @@ import Researcher from '../models/Researcher';
 import ContentSection from "@/components/ContentSection.vue";
 import ResearcherInfo from '@/components/ResearcherInfo.vue';
 
-
 export default {
     name: 'ResearcherView',
     components: {
@@ -37,19 +34,32 @@ export default {
             researcher: null,
         };
     },
-    created() {
-        console.log(this.$route.params.id);
+    methods: {
+        async initData() {
+            console.log(this.$route.params.id);
 
-        const researcherId = this.$route.params.id;
-        this.researcher = Researcher.find(researcherId);
+            const researcherId = this.$route.params.id;
+            this.researcher = Researcher.find(researcherId);
 
-        if(this.researcher == null){
-            this.$router.push({ name: 'home' })
+            if (this.researcher == null) {
+                this.$router.push({ name: 'home' })
+            }
+
+            this.hasAssociations = this.researcher.associations.length > 0;
         }
+    },
+    created() {
 
-        this.hasAssociations = this.researcher.associations.length > 0;
+        this.initData();
+
+        console.log("data inited");
+        console.log(this.researcher);
+        
+
+        this.$watch(() => this.$route.params.id, this.initData);
     },
 };
+
 </script>
 
 <style scoped>
@@ -65,24 +75,24 @@ export default {
     align-content: flex-start;
 }
 
-.flexsecondary ul{
+.flexsecondary ul {
     list-style: none;
 }
 
-.association{
+.association {
     padding: 0.5rem 0;
 }
 
-.association:not(:last-child){
+.association:not(:last-child) {
     border-bottom: 1px solid var(--mid-shade);
 }
 
 @media screen and (max-width: 768px) {
-    .flex{
+    .flex {
         flex-direction: column;
     }
 
-    .flexmain{
+    .flexmain {
         padding: 0.5rem 0;
     }
 
