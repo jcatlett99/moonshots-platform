@@ -33,7 +33,7 @@ class ResearcherSeeder{
 
         new Researcher(
             "Joseph Catlett",
-            "J. Catlett",
+            "BSc. J. Catlett",
             "Irish Creative Engineer",
             "researcher-images/jose.png",
             "",
@@ -46,7 +46,7 @@ class ResearcherSeeder{
 
         new Researcher(
             "Kimberly van den Boogaard",
-            "K. van den Boogaard",
+            "BSc. K. van den Boogaard",
             "Dutch Aerospace Engineer",
             "researcher-images/kimb.jpg",
             "",

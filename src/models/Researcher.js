@@ -18,6 +18,7 @@ class Researcher{
     static all = [];
 
     static find(id){
+        
         if(id < 0 || id >= this.all.length)
             return null;
         else
