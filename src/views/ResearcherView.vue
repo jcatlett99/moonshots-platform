@@ -37,13 +37,14 @@ export default {
     methods: {
         async initData() {
             const researcherId = this.$route.params.id;
-            this.researcher = Researcher.find(researcherId);
+            let researcher = Researcher.find(researcherId);
 
-            if (this.researcher == null) {
+            if (researcher == null) {
                 this.$router.push({ name: 'home' })
+            }else{
+                this.researcher = researcher;
+                this.hasAssociations = this.researcher.associations.length > 0;
             }
-
-            this.hasAssociations = this.researcher.associations.length > 0;
         }
     },
     created() {
