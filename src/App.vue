@@ -16,10 +16,7 @@
     <nav>
       <div class="widthconstrainer">
         <router-link :to="{ name: 'home'}">Home</router-link>
-        <router-link :to="{ name: 'about'}">This</router-link>
-        <!-- <router-link to="/generic">Generic page</router-link> -->
-        <!-- <router-link :to="{ name: 'researcher', params: { id: 0 } }">researcher 0</router-link> -->
-         <router-link :to="{ name: 'discipline', params: { id : 'astronomy' } }">Astronomy</router-link>
+        <router-link :to="{ name: 'about'}">About</router-link>
       </div>
     </nav>
   </header>
