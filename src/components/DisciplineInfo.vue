@@ -1,6 +1,6 @@
 <template>
     <div class="disciplineinfo">
-        <img :src="discipline.imageurl" :alt="discipline.name" />
+        <img v-if="discipline.imageurl != ''" :src="discipline.imageurl" :alt="discipline.name" />
         
         <h1>{{ discipline.name }}</h1>
         

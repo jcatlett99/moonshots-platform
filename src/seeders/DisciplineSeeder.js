@@ -17,7 +17,7 @@ class DisciplineSeeder{
 
         new Discipline(
             "Computer Science",
-            "discipline-images/compsci.webp",
+            "discipline-images/compsci2.webp",
             `<p>Computer Science is the study of computers and computational systems. Unlike electrical and computer engineers, computer scientists deal mostly with software and software systems; this includes their theory, design, development, and application.</p>`
         );
 
@@ -49,6 +49,12 @@ class DisciplineSeeder{
             "Philosophy",
             "discipline-images/philosophy.webp",
             `<p>Philosophy is the study of general and fundamental questions, such as those about existence, reason, knowledge, values, mind, and language. Such questions are often posed as problems to be studied or resolved.</p>`
+        );
+
+        new Discipline(
+            "Psychology",
+            "discipline-images/psychology.webp",
+            `<p>Psychology is the scientific study of the mind and behavior. Psychology is a multifaceted discipline and includes many sub-fields of study such areas as human development and cognition, social behavior, and mental health.</p>`
         );
     }
 }

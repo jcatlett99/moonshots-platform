@@ -37,10 +37,12 @@ export default {
     methods: {
         async initData() {
             const disciplineId = this.$route.params.id;
-            this.discipline = Discipline.find(disciplineId);
+            let discipline = Discipline.find(disciplineId);
 
-            if (this.discipline == null) {
+            if (discipline == null) {
                 this.$router.push({ name: 'home' })
+            }else{
+                this.discipline = discipline;
             }
 
             // this.hasAssociations = this.researcher.associations.length > 0;
@@ -48,8 +50,7 @@ export default {
     },
     created() {
 
-        this.initData();
-        
+        this.initData();        
 
         this.$watch(() => this.$route.params.id, this.initData);
     },
