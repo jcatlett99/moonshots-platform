@@ -6,10 +6,12 @@ class Discipline{
         this.descriptionHTML = descriptionHTML;
 
         Discipline.all.push(this);
+        Discipline.dict[this.shortname.toUpperCase()] = this;
         this.id = Discipline.all.indexOf(this);
     }
 
     static all = [];
+    static dict = {};
 
     static find(id){
         
