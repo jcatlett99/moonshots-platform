@@ -9,12 +9,18 @@ class Researcher{
         this.associations = associations;
         this.bioHTML = bioHTML;
 
+        this.disciplines = new Set();
+
         Researcher.all.push(this);
-        let key = name.replaceAll(" ", "").toUpperCase();
+        let key = displayname.replaceAll(" ", "").toUpperCase();
         Researcher.dict[key] = this;
         this.id = Researcher.all.indexOf(this);
 
         // console.log(this);
+    }
+
+    addDiscipline(discipline){
+        this.disciplines.add(discipline);
     }
 
     static all = [];

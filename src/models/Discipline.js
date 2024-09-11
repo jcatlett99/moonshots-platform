@@ -5,9 +5,15 @@ class Discipline{
         this.imageurl = imageurl;
         this.descriptionHTML = descriptionHTML;
 
+        this.researchers = new Set();
+
         Discipline.all.push(this);
         Discipline.dict[this.shortname.toUpperCase()] = this;
         this.id = Discipline.all.indexOf(this);
+    }
+
+    addResearcher(researcher){
+        this.researchers.add(researcher);
     }
 
     static all = [];

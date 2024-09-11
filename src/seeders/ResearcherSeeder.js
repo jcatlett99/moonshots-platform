@@ -21,12 +21,14 @@ class ResearcherSeeder{
 
         new Researcher(
             "Pragya Jain",
-            "P. Jain",
+            "BA. P. Jain",
             "Transdisciplinary Researcher",
             "researcher-images/pj.jpeg",
             "",
             [
                 "Leiden University",
+                "Science Gallery Rotterdam",
+                "Willem de Kooning Academy",
             ],
             "​​Pragya Jain is a transdisciplinary researcher; her work illustrates the quintessential interface between art, design, science, and technology. Simultaneously with her education in the MSc Media Technology programme at Leiden University, Jain’s research revolves around themes that are seemingly distant or opposed to one another. By employing and superimposing scientific insights, cultural knowledges, and artistic strategies, she seeks to highlight the potential points of intersection that are often invisible. These unique tangents of knowledges take the form of multimedia installations and hybrid publications, serving as the instrument(s) for creating tangible representations of knowledge(s). Which provides an experience, enhancing recognition of one's positionality in relation to others from diverse perspectives, inviting all to (re)imagine the world in the form of waves rather than particles, where the dispersion lies in thoughts, not in experiences, igniting eureka moments."
         );
@@ -39,6 +41,7 @@ class ResearcherSeeder{
             "",
             [
                 "Leiden University",
+                "Erasmus University Rotterdam",
                 "TU Delft",
             ],
             "Hello! I’m Joseph Catlett, an Irish creative engineer based in Leiden. Currently I am completing my M.Sc. in Media Technology at Leiden University. My interest prior to university was in design and theatre. While I was always fascinated by the wonders of cellular biology, distant cosmology, quantum theory, and other intangible natural phenomena, I felt inspired by them creatively, so I always focused this curiosity through artistic means rather than strict ‘science’. However, when it came time to choose a Bachelor’s, I made a pivot from this creative positionality and enrolled in Computer Science and Engineering at Delft University. It wasn’t until my collaborations with the Rotterdam Art and Science Lab that I finally found the time and space to reintegrate my creative and scientific pursuits. Since then I have been operating at the [non-existent] boundary between scientific theory, engineering praxis, and visual/embodied arts [and all the permutations therein]."

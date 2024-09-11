@@ -9,8 +9,10 @@
                     <ContentSection v-if="hasAssociations" header="Associations">
                         <p v-for="association in researcher.associations" class="association">{{ association }}</p>
                     </ContentSection>
-                    <ContentSection header="Disciplines">
-                        W.I.P...
+                    <ContentSection header="Disciplines" v-if="hasDisciplines">
+                        <p class="discipline" v-for="discipline in researcher.disciplines">
+                            <router-link :to="{ name: 'discipline', params: { id: discipline.shortname }}" class="association">{{ discipline.name }}</router-link>
+                        </p>
                     </ContentSection>
                 </div>
             </div>
@@ -44,13 +46,13 @@ export default {
             }else{
                 this.researcher = researcher;
                 this.hasAssociations = this.researcher.associations.length > 0;
+                this.hasDisciplines = this.researcher.disciplines.size > 0;
             }
         }
     },
     created() {
 
         this.initData();
-        
 
         this.$watch(() => this.$route.params.id, this.initData);
     },
@@ -75,12 +77,16 @@ export default {
     list-style: none;
 }
 
-.association {
+.association, .discipline{
     padding: 0.5rem 0;
 }
 
-.association:not(:last-child) {
+.association:not(:last-child), .discipline:not(:last-child) {
     border-bottom: 1px solid var(--mid-shade);
+}
+
+.discipline a{
+    color: var(--light-shade);
 }
 
 @media screen and (max-width: 768px) {

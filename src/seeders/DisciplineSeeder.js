@@ -56,6 +56,25 @@ class DisciplineSeeder{
             "discipline-images/psychology.webp",
             `<p>Psychology is the scientific study of the mind and behavior. Psychology is a multifaceted discipline and includes many sub-fields of study such areas as human development and cognition, social behavior, and mental health.</p>`
         );
+
+        new Discipline(
+            "Aerospace Engineering",
+            "discipline-images/aerospace.webp",
+            `<p>Aerospace engineering is the primary field of engineering concerned with the development of aircraft and spacecraft. It has two major and overlapping branches: aeronautical engineering and astronautical engineering.</p>`
+        )
+
+        new Discipline(
+            "Product Design",
+            "discipline-images/productdesign.webp",
+            `<p>Product design is the process of creating a new product to be sold by a business to its customers. A very broad concept, it is essentially the efficient and effective generation and development of ideas through a process that leads to new products.</p>`
+        )
+
+        new Discipline(
+            "User Experience Design",
+            "discipline-images/uxdesign.webp",
+            `<p>User experience design is the process of creating products that provide meaningful and relevant experiences to users. This involves the design of the entire process of acquiring and integrating the product, including aspects of branding, design, usability, and function.</p>`
+        )
+
     }
 }
 
