@@ -10,12 +10,15 @@ class Researcher{
         this.bioHTML = bioHTML;
 
         Researcher.all.push(this);
+        let key = name.replaceAll(" ", "");
+        Researcher.dict[key] = this;
         this.id = Researcher.all.indexOf(this);
 
         // console.log(this);
     }
 
     static all = [];
+    static dict = {};
 
     static find(id){
         
