@@ -10,7 +10,7 @@ class Researcher{
         this.bioHTML = bioHTML;
 
         Researcher.all.push(this);
-        let key = name.replaceAll(" ", "");
+        let key = name.replaceAll(" ", "").toUpperCase();
         Researcher.dict[key] = this;
         this.id = Researcher.all.indexOf(this);
 
