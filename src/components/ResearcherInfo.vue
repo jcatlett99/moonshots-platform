@@ -1,18 +1,18 @@
 <template>
     <div class="researcherinfo">
-        <img :src="researcher.imageurl" :alt="researcher.name" />
+        <img v-if="researcher.imageurl != ''" :src="researcher.imageurl" :alt="researcher.name" />
         
         <h1>{{ researcher.displayname }}</h1>
         <h3>{{ researcher.occupation }}</h3>
         <table>
             <tr>
                 <td>Name:</td>
-                <td>{{ researcher.name }}</td>
+                <td>{{ (researcher.title != "")? researcher.title + " ":""}}{{ researcher.name }}</td>
             </tr>
             <tr>
                 <td>Email:</td>
-                <td v-if="researcher.email != ''">{{ researcher.email }}</td>
-                <td v-else>No Email Provided</td>
+                <td v-if="researcher.email != ''" class="breakable">{{ researcher.email }}</td>
+                <td v-else class="breakable">No Email Provided</td>
             </tr>
         </table>
         
@@ -41,6 +41,8 @@ export default {
 
     .researcherbio{
         margin-top: 2rem;
+        
+        text-align: justify;
     }
 
     h1{

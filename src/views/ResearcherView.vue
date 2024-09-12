@@ -14,6 +14,11 @@
                             <router-link :to="{ name: 'discipline', params: { id: discipline.shortname }}" class="association">{{ discipline.name }}</router-link>
                         </p>
                     </ContentSection>
+                    <ContentSection header="Projects" v-if="hasProjects">
+                        <p class="discipline" v-for="project in researcher.projects">
+                            <router-link :to="{ name: 'project', params: { id: project.shortname }}" class="association">{{ project.title }}</router-link>
+                        </p>
+                    </ContentSection>
                 </div>
             </div>
         </div>
@@ -46,7 +51,8 @@ export default {
             }else{
                 this.researcher = researcher;
                 this.hasAssociations = this.researcher.associations.length > 0;
-                this.hasDisciplines = this.researcher.disciplines.size > 0;
+                this.hasDisciplines = this.researcher.disciplines.length > 0;
+                this.hasProjects = this.researcher.projects.length > 0;
             }
         }
     },

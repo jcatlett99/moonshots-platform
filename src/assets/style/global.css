@@ -80,6 +80,7 @@ body > #app{
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-header);
     color: var(--lightest-shade);
+    /* text-align: left; */
 }
 
 /* #app {
@@ -182,8 +183,22 @@ p:not(:first-child){
     gap: 1rem;
 }
 
+.center{
+    text-align: center;
+}
+
+table {
+    table-layout: fixed;
+ }
+
+.breakable{
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
 @media screen and (max-width: 768px) {
     :root{
         font-size: 90%;
+        --standard-padding: 1rem;
     }
 }

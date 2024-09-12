@@ -1,20 +1,21 @@
 <template>
-    <div class="disciplineinfo">
-        <img class="coverimg" v-if="discipline.imageurl != ''" :src="discipline.imageurl" :alt="discipline.name" />
+    <div class="projectinfo">
+        <img class="coverimg" v-if="project.imageurl != ''" :src="project.imageurl" :alt="project.title" />
         
-        <h1>{{ discipline.name }}</h1>
+        <h1>{{ project.title }}</h1>
+        <h3 v-if="project.undertitle != ''">{{ project.undertitle }}</h3>
         
-         <div class="disciplinebio" v-html="discipline.descriptionHTML"></div>
+         <div class="projectbio" v-html="project.descriptionHTML"></div>
     </div>
 </template>
 
 <script>
-import Discipline from '@/models/Discipline';
+import Project from '@/models/Project';
 
 export default {
-    name: 'DisciplineInfo',
+    name: 'ProjectInfo',
     props: {
-        discipline: {
+        project: {
             type: Object,
             required: true,
         },
@@ -29,13 +30,13 @@ export default {
 
         margin: -2.5rem 0 1rem -3rem;
 
-        height: 12.5rem;
+        height: 20rem;
 
         border-bottom: 1px solid var(--mid-dark-shade);
 
     }
 
-    .disciplinebio{
+    .projectbio{
         margin-top: 2rem;
         
         text-align: justify;

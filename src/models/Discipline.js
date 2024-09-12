@@ -5,7 +5,8 @@ class Discipline{
         this.imageurl = imageurl;
         this.descriptionHTML = descriptionHTML;
 
-        this.researchers = new Set();
+        this.researchers = [];
+        this.projects = [];
 
         Discipline.all.push(this);
         Discipline.dict[this.shortname.toUpperCase()] = this;
@@ -13,7 +14,11 @@ class Discipline{
     }
 
     addResearcher(researcher){
-        this.researchers.add(researcher);
+        this.researchers.push(researcher);
+    }
+
+    addProject(project){
+        this.projects.push(project);
     }
 
     static all = [];

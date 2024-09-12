@@ -2,6 +2,7 @@ import { createRouter, createWebHashHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import ResearcherView from "../views/ResearcherView.vue";
 import DisciplineView from "../views/DisciplineView.vue";
+import ProjectView from "../views/ProjectView.vue";
 import DebugView from "../views/DebugView.vue";
 
 const routes = [
@@ -40,6 +41,11 @@ const routes = [
     path: "/discipline/:id", // Dynamic segment
     name: "discipline",
     component: DisciplineView,
+  },
+  {
+    path: "/project/:id", // Dynamic segment
+    name: "project",
+    component: ProjectView,
   },
   {
     path: "/debug",

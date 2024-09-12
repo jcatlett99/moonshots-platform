@@ -75,6 +75,18 @@ class DisciplineSeeder{
             `<p>User experience design is the process of creating products that provide meaningful and relevant experiences to users. This involves the design of the entire process of acquiring and integrating the product, including aspects of branding, design, usability, and function.</p>`
         )
 
+        new Discipline(
+            "Xenology",
+            "discipline-images/xenology.webp",
+            `<p>Xenology is the scientific study of extraterrestrial life, intelligence, and civilization. It is a branch of exobiology, which is the study of the origin, evolution, and distribution of life in the universe.</p>`
+        )
+
+        new Discipline(
+            "Artificial Intelligence",
+            "discipline-images/ai.webp",
+            `<p>Artificial intelligence is the simulation of human intelligence processes by machines, especially computer systems. These processes include learning, reasoning, problem-solving, perception, and language-understanding.</p>`
+        )
+
     }
 }
 

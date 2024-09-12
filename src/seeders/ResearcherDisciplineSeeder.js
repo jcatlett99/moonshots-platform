@@ -10,30 +10,43 @@ class ResearcherDisciplineSeeder {
         // console.log(dis);
         
 
-        this.giveResearcherDisciplines(res.PRAGYAJAIN, [
-            dis.ASTRONOMY,
-            dis.ARTISTICRESEARCH,
-            dis.PHYSICS,
-            dis.PRODUCTDESIGN,
-            dis.COMPUTERSCIENCE
+        this.giveResearcherDisciplines(
+            res.PJAIN, [
+                dis.ASTRONOMY,
+                dis.ARTISTICRESEARCH,
+                dis.PHYSICS,
+                dis.PRODUCTDESIGN,
+                dis.COMPUTERSCIENCE
         ])
 
-        this.giveResearcherDisciplines(res.JOSEPHCATLETT, [
-            dis.COMPUTERSCIENCE,
-            dis.ARTISTICRESEARCH,
-            dis.USEREXPERIENCEDESIGN
+        this.giveResearcherDisciplines(
+            res.JCATLETT, [
+                dis.COMPUTERSCIENCE,
+                dis.ARTISTICRESEARCH,
+                dis.USEREXPERIENCEDESIGN
         ])
 
-        this.giveResearcherDisciplines(res.KIMBERLYVANDENBOOGAARD, [
-            dis.ARTISTICRESEARCH,
-            dis.AEROSPACEENGINEERING,
+        this.giveResearcherDisciplines(
+            res.KVANDENBOOGAARD, [
+                dis.ARTISTICRESEARCH,
+                dis.AEROSPACEENGINEERING,
         ])
 
-        this.giveResearcherDisciplines(res.RICKHEEMSKERK, [
-            dis.COMPUTERSCIENCE,
-            dis.USEREXPERIENCEDESIGN,
-            dis.ARTISTICRESEARCH,
+        this.giveResearcherDisciplines(
+            res.RDHEEMSKERK, [
+                dis.COMPUTERSCIENCE,
+                dis.USEREXPERIENCEDESIGN,
+                dis.ARTIFICIALINTELLIGENCE,
+                dis.ARTISTICRESEARCH,
         ])
+
+        this.giveResearcherDisciplines(
+            res.AKNOUF, [
+                dis.XENOLOGY,
+                dis.ASTRONOMY,
+                dis.ARTISTICRESEARCH,
+            ]
+        )
     }
 
     static giveResearcherDisciplines(researcher, disciplines = []) {

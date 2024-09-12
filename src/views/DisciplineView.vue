@@ -14,6 +14,11 @@
                             <router-link :to="{ name: 'researcher', params: { id: researcher.id }}" class="researcher">{{ researcher.name }}</router-link>
                         </p>
                     </ContentSection>
+                    <ContentSection header="Projects in the field" v-if="hasProjects">
+                        <p v-for="project in discipline.projects" class="researcher">
+                            <router-link :to="{ name: 'project', params: { id: project.id }}" class="researcher">{{ project.title }}</router-link>
+                        </p>
+                    </ContentSection>
                 </div>
             </div>
         </div>
@@ -45,7 +50,8 @@ export default {
                 this.$router.push({ name: 'home' })
             }else{
                 this.discipline = discipline;
-                this.hasResearchers = this.discipline.researchers.size > 0;
+                this.hasResearchers = this.discipline.researchers.length > 0;
+                this.hasProjects = this.discipline.projects.length > 0;
             }
 
             // this.hasAssociations = this.researcher.associations.length > 0;

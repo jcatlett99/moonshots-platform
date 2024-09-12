@@ -5,7 +5,7 @@
             <h2>Researchers</h2>
             <ul>
                 <li v-for="researcher in researchers" :key="researcher.id">
-                    <router-link :to="{ name: 'researcher', params: {id: researcher.id }}">
+                    <router-link :to="{ name: 'researcher', params: {id: researcher.shortname }}">
                         {{ researcher.displayname }}
                     </router-link>
                 </li>
@@ -19,6 +19,15 @@
                     </router-link>
                 </li>
             </ul>
+            <br>
+            <h2>Projects</h2>
+            <ul>
+                <li v-for="project in projects" :key="project.id">
+                    <router-link :to="{ name: 'project', params: {id: project.shortname }}">
+                        {{ project.title }}
+                    </router-link>
+                </li>
+            </ul>
         </ContentSection>
     </div>
 </template>
@@ -26,6 +35,7 @@
 import ContentSection from "@/components/ContentSection.vue";
 import Researcher from "@/models/Researcher";
 import Discipline from "@/models/Discipline";
+import Project from "@/models/Project";
 
 export default {
     name: 'DebugView',
@@ -41,6 +51,7 @@ export default {
     created(){
         this.researchers = Researcher.all;
         this.disciplines = Discipline.all;
+        this.projects = Project.all;
     }
     
 }
