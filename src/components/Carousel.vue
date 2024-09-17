@@ -42,7 +42,7 @@ export default {
   position: relative;
   /* width: 100%; */
 
-
+  
   margin-bottom: 100px;
 }
 

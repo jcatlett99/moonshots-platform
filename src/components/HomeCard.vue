@@ -42,7 +42,7 @@ export default {
 
   box-shadow: 0 0 0.75rem rgb(85, 85, 85);
 
-  background-color: aqua;
+  background-color: #ccc;;
 }
 
 .image-left {
