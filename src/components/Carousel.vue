@@ -42,7 +42,6 @@ export default {
   position: relative;
   /* width: 100%; */
 
-  overflow:hidden;
 
   margin-bottom: 100px;
 }
@@ -62,6 +61,7 @@ export default {
 .carousel-track {
   display: flex;
   gap: 16px;
+  padding: 16px;
   /* Space between cards */
   align-items: center;
   /* Align items vertically */
