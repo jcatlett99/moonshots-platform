@@ -4,7 +4,7 @@ import Discipline from '../models/Discipline';
 
 class ProjectResearcherDisciplineSeeder{
     static seed(){
-        console.log(Researcher.dict);
+        // console.log(Researcher.dict);
         
         this.giveProjectDisciplineAndResearchers(
             Project.dict.COSMICINTEGRATIONALISM,
@@ -54,7 +54,7 @@ class ProjectResearcherDisciplineSeeder{
     static giveProjectResearchers(project, researchers = []) {
 
         for (let researcher of researchers) {
-            console.log(researcher);
+            // console.log(researcher);
             
             if(researcher == null | project == null) continue
             project.addResearcher(researcher);
