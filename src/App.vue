@@ -23,11 +23,11 @@
 
   <router-view />
 
-  <div>
+  <footer>
     <div class="widthconstrainer">
       <p>Made with love by the Cosmic Integrationalism team.</p>
       <p>&copy; 2024</p>
     </div>
-  </div>
+  </footer>
 
 </template>
