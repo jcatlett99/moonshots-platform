@@ -16,7 +16,7 @@
         </EventCard>
       </div>
     </Carousel>
-    <div style="height: 400px; width: 100%; background-color: red;">
+    <div>
       <HomeCard v-for="(event, index) in events" :key="index" :thumbnail="event.thumbnail"
         :class="{ 'image-left': index % 2 === 0, 'image-right': index % 2 !== 0 }">
         <template v-slot:key-info>
