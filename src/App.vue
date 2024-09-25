@@ -1,4 +1,11 @@
 <template>
+  <nav>
+    <router-link to="/">Home</router-link> |
+    <router-link to="/about">This</router-link> | 
+    <router-link to="/archive">Archive</router-link>
+  </nav>
+  <router-view />
+</template>
 
   <header>
     <div>

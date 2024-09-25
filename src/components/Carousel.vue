@@ -1,12 +1,10 @@
 <template>
   <div class="carousel">
-    <button class="carousel-button left" @click="scrollLeft">&#9664;</button>
     <div class="carousel-container">
       <div class="carousel-track" ref="track">
         <slot></slot>
       </div>
     </div>
-    <button class="carousel-button right" @click="scrollRight">&#9654;</button>
   </div>
 </template>
 
@@ -21,22 +19,6 @@ export default {
     window.removeEventListener('resize', this.updateTrackWidth);
   },
   methods: {
-    scrollLeft() {
-      const track = this.$refs.track;
-      const scrollAmount = track.clientWidth / 2; // Adjust this value if needed
-      track.scrollBy({
-        left: -scrollAmount,
-        behavior: 'smooth'
-      });
-    },
-    scrollRight() {
-      const track = this.$refs.track;
-      const scrollAmount = track.clientWidth / 2; // Adjust this value if needed
-      track.scrollBy({
-        left: scrollAmount,
-        behavior: 'smooth'
-      });
-    },
     updateTrackWidth() {
       const track = this.$refs.track;
       if (track) {
@@ -58,40 +40,32 @@ export default {
   display: flex;
   align-items: center;
   position: relative;
-  width: 100%;
-  overflow: hidden;
+  /* width: 100%; */
+
+  
+  margin-bottom: 100px;
 }
 
 .carousel-container {
   flex: 1;
-  overflow: hidden;
+  overflow-x: scroll;
   position: relative;
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.carousel-container::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
 }
 
 .carousel-track {
   display: flex;
-  gap: 16px; /* Space between cards */
-  align-items: center; /* Align items vertically */
-  white-space: nowrap; /* Prevent cards from wrapping */
-}
-
-.carousel-button {
-  background-color: rgba(0, 0, 0, 0.5);
-  border: none;
-  color: white;
-  padding: 10px;
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 1;
-}
-
-.carousel-button.left {
-  left: 0;
-}
-
-.carousel-button.right {
-  right: 0;
+  gap: 16px;
+  padding: 16px;
+  /* Space between cards */
+  align-items: center;
+  /* Align items vertically */
+  white-space: nowrap;
+  /* Prevent cards from wrapping */
 }
 </style>

@@ -5,6 +5,8 @@ import DisciplineView from "../views/DisciplineView.vue";
 import ProjectView from "../views/ProjectView.vue";
 import DebugView from "../views/DebugView.vue";
 
+import ArchiveView from "../views/ArchiveView.vue";
+
 const routes = [
   {
     path: "/",
@@ -21,15 +23,11 @@ const routes = [
       return import(/* webpackChunkName: "about" */ "../views/AboutView.vue");
     },
   },
-
   {
-    path: "/generic",
-    name: "generic",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
+    path: "/archive",
+    name: "archive",
     component: function () {
-      return import(/* webpackChunkName: "about" */ "../views/GenericView.vue");
+      return import(/* webpackChunkName: "about" */ "../views/ArchiveView.vue");
     },
   },
   {
