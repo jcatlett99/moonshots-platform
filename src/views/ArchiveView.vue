@@ -12,8 +12,8 @@
         </div>
 
         <div class="pagination">
-            <button @click="prevPage" :disabled="currentPage === 1">Previous</button>
-            <button @click="nextPage" :disabled="endIndex >= cards.length">Next</button>
+            <button @click="prevPage" :disabled="currentPage === 1"><</button>
+            <button @click="nextPage" :disabled="endIndex >= cards.length">></button>
         </div>
     </div>
 </template>
@@ -88,6 +88,7 @@ export default {
 </script>
 
 <style scoped>
+
 .carousel {
     margin-top: 5%;
 }
@@ -98,14 +99,43 @@ export default {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap:8px;
+    gap: 8px;
 }
 
 .pagination {
-  margin-top: 20px;
+    margin-top: 20px;
+
+    display: flex;
+    justify-content: center;
+
 }
+
 .pagination button {
-  margin: 5px;
-  padding: 10px;
+    margin: 0.5em;
+    padding: 0.5em;
+
+    background-color: transparent;
+    border-radius: 0.3em;
+    color: white;
+    border: solid 0.1em white;
+
+    transition: all .2s ease-in-out;
+}
+
+.pagination button:hover {
+    transform: scale(1.2);
+    box-shadow: 0px 0px 10px white;
+}
+
+.pagination button:active {
+    transition: all .2s ease-in-out;
+    transform: scale(0.8);
+}
+
+.pagination button:disabled {
+    scale: 1.05;
+    background-color: rgb(58, 58, 58);
+    color: rgb(168, 168, 168);
+    border: solid 0.1em rgb(168, 168, 168);
 }
 </style>
