@@ -89,7 +89,7 @@ export default {
 
 <style scoped>
 
-.carousel {
+.archive {
     margin-top: 5%;
 }
 
@@ -103,7 +103,7 @@ export default {
 }
 
 .pagination {
-    margin-top: 20px;
+    margin-top: 2em;
 
     display: flex;
     justify-content: center;
@@ -122,10 +122,11 @@ export default {
     transition: all .2s ease-in-out;
 }
 
-.pagination button:hover {
+.pagination button:hover:enabled {
     transform: scale(1.2);
     box-shadow: 0px 0px 10px white;
 }
+
 
 .pagination button:active {
     transition: all .2s ease-in-out;
