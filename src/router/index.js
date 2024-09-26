@@ -5,6 +5,7 @@ import DisciplineView from "../views/DisciplineView.vue";
 import ProjectView from "../views/ProjectView.vue";
 import DebugView from "../views/DebugView.vue";
 import NodeGraphView from "../views/NodeGraphView.vue";
+import NodeGraphFullView from "@/views/NodeGraphFullView.vue";
 
 import ArchiveView from "../views/ArchiveView.vue";
 
@@ -50,6 +51,11 @@ const routes = [
     path: "/nodegraph",
     name: "nodegraph",
     component: NodeGraphView,
+  },
+  {
+    path: "/nodegraphfull",
+    name: "nodegraphfull",
+    component: NodeGraphFullView,
   },
   {
     path: "/debug",
