@@ -47,6 +47,13 @@ class ResearcherDisciplineSeeder {
                 dis.ARTISTICRESEARCH,
             ]
         )
+
+        this.giveResearcherDisciplines(
+            res["KO'FLAHERTY"], [
+                dis.ARTISTICRESEARCH,
+                dis.ASTRONOMY
+            ]
+        )
     }
 
     static giveResearcherDisciplines(researcher, disciplines = []) {

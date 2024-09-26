@@ -113,6 +113,18 @@ class ResearcherSeeder{
             "Špela Petrič",
             "Š. Petrič",
         )
+
+        new Researcher(
+            "Karen O'Flaherty",
+            "K. O'Flaherty",
+            "", "Information Manager in the ESA Science Directorate’s Coordination Office",
+            "https://i0.wp.com/www.ejr-quartz.com/wp-content/uploads/2016/04/Karen-OFlaherty-e1470298418189.jpeg?fit=1200%2C1200&ssl=1&w=640",
+            "",
+            [
+                "European Space Agency (ESA)"
+            ],
+            `She is a scientist and science communicator with extensive experience working with space science missions at ESA, in scientific support and outreach to different communities. In her current role she supports the Directorate’s Advisory Structure (working groups and committees) as well as individual projects, such as the Voyage 2050 process to define the science priorities for the next decades.`
+        )
     }
 }
 
