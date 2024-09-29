@@ -255,9 +255,10 @@ class Sketch {
                 }
             }
 
-            console.log("Closest node: " , closeNode.title);
-            console.log("mx " + mousePos.x, "nx " + closeNode.pos.x);
-            console.log("my " + mousePos.y, "ny " + closeNode.pos.y);
+            // console.log("Closest node: " , closeNode.title);
+            // console.log("mx " + mousePos.x, "nx " + closeNode.pos.x);
+            // console.log("my " + mousePos.y, "ny " + closeNode.pos.y);
+
 
 
             clicked = true
@@ -284,6 +285,7 @@ class Sketch {
 
             if (mousePosDiff < 3 && panning == false) {
                 console.log("Clicked on: " + closeNode);
+                closeNode.clicked();
 
             }
 

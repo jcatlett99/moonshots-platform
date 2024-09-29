@@ -1,7 +1,7 @@
 <style>
 html,
 body {
-    overscroll-behavior-y: contain;
+    overscroll-behavior: contain;
 }
 
 #sketch {

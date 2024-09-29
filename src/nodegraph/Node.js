@@ -1,5 +1,7 @@
 import Project from '../models/Project';
 import Discipline from '../models/Discipline';
+import router from '../router';
+
 
 class Node {
 
@@ -23,15 +25,19 @@ class Node {
                     node.img = img;
                 });
             }
+            this.url = router.resolve({ name: 'project', params: { id: node.item.shortname } });    
+            
             Node.highPriority.push(this);
         }else if(item instanceof Discipline){
             this.title = item.name;
             if(item.imageurl != "" && item.imageurl != null){
                 p.loadImage(item.imageurl, function (img){
-                    img.resize(75,75);
+                    img.resize(100,100);
                     node.img = img;
                 });
             }
+            node.url = router.resolve({ name: 'discipline', params: { id: node.item.shortname } });
+
             Node.lowPriority.push(this);
         }
         //console.log(this.img);
@@ -92,6 +98,16 @@ class Node {
         }
         
         g.pop();
+    }
+
+    clicked(){
+        console.log("Clicked on " + this.title);
+        console.log(this.url);
+
+        console.log(router);
+        window.open(this.url.href, '_blank');
+        // router.push(this.url);
+        
     }
 
     static all = [];
