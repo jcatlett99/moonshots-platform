@@ -4,6 +4,7 @@ import Discipline from '../models/Discipline';
 class Node {
 
     constructor(pos, size, p, item = null) {
+        let node = this;
         this.p = p;
         this.pos = pos;
         this.size = size;
@@ -17,17 +18,23 @@ class Node {
         if(item instanceof Project){
             this.title = item.title;
             if(item.imageurl != "" && item.imageurl != null){
-                this.img = p.loadImage(item.imageurl);
+                p.loadImage(item.imageurl, function (img){
+                    img.resize(100,100);
+                    node.img = img;
+                });
             }
             Node.highPriority.push(this);
         }else if(item instanceof Discipline){
             this.title = item.name;
             if(item.imageurl != "" && item.imageurl != null){
-                this.img = p.loadImage(item.imageurl);
+                p.loadImage(item.imageurl, function (img){
+                    img.resize(75,75);
+                    node.img = img;
+                });
             }
             Node.lowPriority.push(this);
         }
-        console.log(this.img);
+        //console.log(this.img);
         
     }
 
@@ -152,7 +159,11 @@ class Node {
             for (let j = i + 1; j < nodes.length; j++) {
                 let pos = nodes[i].pos
                 let dir = nodes[j].pos.copy().sub(pos)
-                let force = dir.div(dir.mag() * dir.mag())
+                let dirmag = dir.mag()
+                if (dir.mag() == 0){
+                    dirmag = 0.1;
+                }
+                let force = dir.div(dirmag * dirmag)
                 force.mult(Node.forceConstant * (nodes[i].mass + nodes[j].mass) / 5)
                 nodes[i].force.add(force.copy().mult(-1))
                 nodes[j].force.add(force)

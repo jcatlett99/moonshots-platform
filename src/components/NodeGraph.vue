@@ -1,4 +1,9 @@
 <style>
+html,
+body {
+    overscroll-behavior-y: contain;
+}
+
 #sketch {
     width: 100%;
     height: 100%;

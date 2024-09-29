@@ -1,10 +1,7 @@
-import Discipline from '../models/Discipline';
-import Project from '../models/Project';
-import Researcher from '../models/Researcher';
 import Node from './Node';
 
 class Sketch {
-
+    
     static sketch(p) {
 
         let courier = p.loadFont('fonts/CourierPrime-Regular.ttf');
@@ -30,6 +27,9 @@ class Sketch {
 
         let graphic = p.createGraphics(100, 100, p.P2D);
         graphic.clear();
+
+        let zoomLevel = 1;
+        let zoomFactor = 0.001;
 
 
         let initSizeBasedVariables = function (p) {
@@ -74,7 +74,9 @@ class Sketch {
                     const bp2 = breakpoints[i + 1];
                     if (size >= bp1.size && size <= bp2.size) {
                         // Non-linear interpolation using an easing function
-                        const t = (size - bp1.size) / (bp2.size - bp1.size);
+                        let thingThatCantBe0 = bp2.size - bp1.size;
+                        if (thingThatCantBe0 == 0) thingThatCantBe0 = 0.001;
+                        const t = (size - bp1.size) / thingThatCantBe0;
                         const easedT = t * t * (3 - 2 * t); // Smoothstep easing function
                         return p.lerp(bp1.gravity, bp2.gravity, easedT);
                     }
@@ -85,10 +87,24 @@ class Sketch {
             Node.gravityConstant = p.createVector(interpolateGravity(p.width), interpolateGravity(p.height));
         }
 
+        let getTrueMousePos = function (p) {
+            let mouseVect = p.createVector((p.mouseX - p.width / 2) / zoomLevel, (p.mouseY - p.height / 2) / zoomLevel);
+            
+
+
+            let panVect = p.createVector(panOffset.x, panOffset.y);
+            
+            return mouseVect.copy().sub(panVect);
+
+            
+        }
+
         p.setup = function () {
 
             //let dimensions = this.sketchElement.getBoundingClientRect();
             p.createCanvas(600, 400, p.WEBGL);
+
+            p.pixelDensity(1);
 
             p.imageMode(p.CENTER);
             p.rectMode(p.CENTER);
@@ -119,6 +135,7 @@ class Sketch {
             p.background(0);
 
             p.push();
+            p.scale(zoomLevel);
             p.translate(panOffset.x * 0.25, panOffset.y * 0.25);
             p.noFill();
             p.stroke(35);
@@ -146,11 +163,14 @@ class Sketch {
             //p.background(0);
             g.push();
             g.clear();
-            g.translate()
+            p.scale(zoomLevel);
             p.translate(panOffset.x, panOffset.y)
             g.translate(g.width / 2, g.height / 2);
-            g.translate(panOffset.x, panOffset.y);
             g.textFont(courier);
+            g.scale(zoomLevel);
+            g.translate(panOffset.x, panOffset.y);
+
+
             g.fill(255)
             g.stroke(255)
             
@@ -189,7 +209,9 @@ class Sketch {
             }
 
             if (clicked == true) {
-                let mousePos = p.createVector((p.mouseX - p.width / 2) - panOffset.x, (p.mouseY - p.height / 2) - panOffset.y);
+                // let mousePos = p.createVector((p.mouseX - p.width / 2) - (panOffset.x), (p.mouseY - p.height / 2) - (panOffset.y));
+                // mousePos.div(zoomLevel);
+                let mousePos = getTrueMousePos(p);
                 closeNode.pos.lerp(mousePos, lerpValue)
                 if (lerpValue < 0.95) {
                     lerpValue += 0.02;
@@ -206,27 +228,48 @@ class Sketch {
         }
 
         p.touchStarted = function () {
-            console.log("touch started");
+            // console.log("touch started");
+            let trueMousePos = getTrueMousePos(p);
+            console.log("x " + trueMousePos.x, "ÿ: " + trueMousePos.y);
+            
 
-            mouseStart = p.createVector(p.mouseX, p.mouseY);
+            mouseStart = trueMousePos.copy();
+
 
             if (p.mouseX < 0 || p.mouseX > p.width || p.mouseY < 0 || p.mouseY > p.height) {
                 return;
             }
-            let mousePos = p.createVector((p.mouseX - p.width / 2) - panOffset.x, (p.mouseY - p.height / 2) - panOffset.y);
+            let mousePos = trueMousePos.copy();
+            // mousePos.div(zoomLevel);
+            closeNodeMag = 5000;
 
             for (let node of Node.all) {
-                if (mousePos.copy().sub(node.pos).mag() - closeNode.mass / (2 * p.PI) < mousePos.copy().sub(closeNode.pos).mag() - closeNode.mass / (2 * p.PI))
+                // if (mousePos.copy().sub(node.pos).mag() - closeNode.mass / (2 * p.PI) < mousePos.copy().sub(closeNode.pos).mag() - closeNode.mass / (2 * p.PI))
+                let dist = mousePos.copy().sub(node.pos).mag()
+                if (dist < closeNodeMag) {
+                    // console.log("Closer node: " , node.title, dist);
+                    
+                    
                     closeNode = node;
+                    closeNodeMag = dist;
+                }
             }
+
+            console.log("Closest node: " , closeNode.title);
+            console.log("mx " + mousePos.x, "nx " + closeNode.pos.x);
+            console.log("my " + mousePos.y, "ny " + closeNode.pos.y);
+
 
             clicked = true
 
-            closeNodeMag = mousePos.copy().sub(closeNode.pos).mag()
-            console.log(closeNodeMag);
-            if (closeNodeMag > closeNode.mass / (2 * p.PI) + 10) {
+            //closeNodeMag = mousePos.copy().sub(closeNode.pos).mag()
+            // console.log(closeNodeMag);
+            if (closeNodeMag < (closeNode.mass / (2 * p.PI)) + 10) {
+                p.cursor('grab');
+                console.log("grabbing!");
+                
+            }else{
                 clicked = false;
-                // console.log("panning!")
                 panning = true;
                 panStart = p.createVector(p.mouseX, p.mouseY);
                 p.cursor('grab');
@@ -236,7 +279,7 @@ class Sketch {
 
         p.touchEnded = function () {
 
-            let currentMousePos = p.createVector(p.mouseX, p.mouseY);
+            let currentMousePos = getTrueMousePos(p);
             let mousePosDiff = currentMousePos.dist(mouseStart);
 
             if (mousePosDiff < 3 && panning == false) {
@@ -256,12 +299,17 @@ class Sketch {
             if (panning && !clicked) {
                 let dx = p.mouseX - panStart.x;
                 let dy = p.mouseY - panStart.y;
-                panOffset.x += dx;
-                panOffset.y += dy;
+                panOffset.x += dx / zoomLevel;
+                panOffset.y += dy / zoomLevel;
                 panStart = p.createVector(p.mouseX, p.mouseY);
-                panOffset.x = p.constrain(panOffset.x, -p.width / 2, p.width / 2);
-                panOffset.y = p.constrain(panOffset.y, -p.height / 2, p.height / 2);
+                panOffset.x = p.constrain(panOffset.x, -p.width, p.width);
+                panOffset.y = p.constrain(panOffset.y, -p.height, p.height);
             }
+        };
+
+        p.mouseWheel = function (event) {
+            zoomLevel -= event.delta * zoomFactor;
+            zoomLevel = p.constrain(zoomLevel, 0.1, 5); // Constrain zoom level to reasonable limits
         };
     }
 
