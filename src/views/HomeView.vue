@@ -16,7 +16,7 @@
         </EventCard>
       </div>
     </Carousel>
-    <div style="height: 400px; width: 100%; background-color: red;">
+    <div>
       <HomeCard v-for="(event, index) in events" :key="index" :thumbnail="event.thumbnail"
         :class="{ 'image-left': index % 2 === 0, 'image-right': index % 2 !== 0 }">
         <template v-slot:key-info>
@@ -125,30 +125,6 @@ export default {
           keyInfo2: 'Key Info 2:',
           value2: 'Value 2',
           text: 'This is additional text for card 2.'
-        },
-        {
-          thumbnail: 'https://via.placeholder.com/300',
-          keyInfo1: 'Key Info 1:',
-          value1: 'Value 1',
-          keyInfo2: 'Key Info 2:',
-          value2: 'Value 2',
-          text: 'This is additional text for card 3.'
-        },
-        {
-          thumbnail: 'https://via.placeholder.com/300',
-          keyInfo1: 'Key Info 1:',
-          value1: 'Value 1',
-          keyInfo2: 'Key Info 2:',
-          value2: 'Value 2',
-          text: 'This is additional text for card 3.'
-        },
-        {
-          thumbnail: 'https://via.placeholder.com/300',
-          keyInfo1: 'Key Info 1:',
-          value1: 'Value 1',
-          keyInfo2: 'Key Info 2:',
-          value2: 'Value 2',
-          text: 'This is additional text for card 3.'
         },
         {
           thumbnail: 'https://via.placeholder.com/300',
