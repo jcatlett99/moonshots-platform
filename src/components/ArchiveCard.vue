@@ -6,8 +6,13 @@
       <div class="key-info">
         <slot name="key-info"></slot>
       </div>
-      <div class="text">
-        <slot name="text"></slot>
+      <div class="lower-text">
+        <div class="value">
+          <slot name="value"></slot>
+        </div>
+        <div class="text">
+          <slot name="text"></slot>
+        </div>
       </div>
     </div>
   </div>
@@ -49,17 +54,15 @@ export default {
   display: flex;
   flex-direction: column;
   flex: 1;
+  justify-content: space-between;
   overflow: hidden;
-  padding-right: 8px;
-  padding-left: 8px;
+  padding: 0.5em;
 }
 
 .key-info {
-  flex: 1;
-  
-  overflow: wrap;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+
+  overflow: hidden;
+  max-height: 60%;
 
   text-align: left;
   font-size: 1em;
@@ -73,5 +76,6 @@ export default {
 
   text-align: left;
   font-size: 0.75em;
+
 }
 </style>

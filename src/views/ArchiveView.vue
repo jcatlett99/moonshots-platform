@@ -3,7 +3,10 @@
         <div class="card-wrapper">
             <ArchiveCard v-for="(card, index) in paginatedCards" :key="index" :thumbnail="card.thumbnail">
                 <template v-slot:key-info>
-                    <p><strong>{{ card.keyInfo1 }}</strong> {{ card.value1 }}</p>
+                    <p><strong>{{ card.keyInfo1 }}</strong></p>
+                </template>
+                <template v-slot:value>
+                    <p>{{ card.value1 }}</p>
                 </template>
                 <template v-slot:text>
                     <p>{{ card.text }}</p>
