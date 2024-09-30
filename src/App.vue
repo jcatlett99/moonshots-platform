@@ -1,12 +1,4 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">This</router-link> | 
-    <router-link to="/archive">Archive</router-link>
-  </nav>
-  <router-view />
-</template>
-
   <header>
     <div>
       <div class="widthconstrainer flex">
@@ -16,15 +8,15 @@
             Platform for Cosmic Integrationalism
           </h2>
         </router-link>
-      
       </div>
     </div>
 
     <nav>
       <div class="widthconstrainer">
-        <router-link :to="{ name: 'home'}">Home</router-link>
-        <router-link :to="{ name: 'about'}">About</router-link>
+        <router-link :to="{ name: 'home' }">Home</router-link>
+        <router-link :to="{ name: 'about' }">About</router-link>
         <router-link :to="{ name: 'debug'}">Debug</router-link>
+        <router-link to="/archive">Archive</router-link>
       </div>
     </nav>
   </header>
