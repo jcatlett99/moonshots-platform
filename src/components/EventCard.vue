@@ -1,18 +1,13 @@
 <template>
 
     <div class="card">
-        <img src="../assets/homepage-images/yelena-cosmism.jpg" alt="Thumbnail" class="thumbnail">
+        <img v-bind:src="'/cosmic-archive-images/' + thumbnail + '.jpg'" alt="Thumbnail" class="thumbnail">
         <div class="content">
             <div class="key-info">
                 <slot name="key-info"></slot>
-                <p>Title: </p>
-                <p>Authors: </p>
-                <p>Discipline: </p>
             </div>
             <div class="text">
                 <slot name="text"></slot>
-                <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat.</p>
-
             </div>
         </div>
     </div>
@@ -49,11 +44,13 @@ export default {
 .thumbnail {
   width: 100%;
   height: auto;
+  max-height: 40%;
+  object-fit: fill;
 }
 
 .content {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   padding: 16px;
   flex: 1;
   overflow: hidden;
@@ -64,7 +61,7 @@ export default {
   padding-right: 8px;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  white-space: wrap !important;
 
   text-align: left;
 }
@@ -73,7 +70,7 @@ export default {
   flex: 2;
   overflow: hidden;
   white-space: normal;
-  text-overflow: clip;
+  text-overflow: ellipsis !important; 
 
   text-align: left;
 }
