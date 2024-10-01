@@ -281,27 +281,24 @@ class Sketch {
         }
 
         p.touchEnded = function () {
+
+            if (!(p.mouseX < 0 || p.mouseX > p.width || p.mouseY < 0 || p.mouseY > p.height)) {
+                let currentMousePos = getTrueMousePos(p);
+                let mousePosDiff = currentMousePos.dist(mouseStart);
+
+                if (mousePosDiff < 3 && panning == false) {
+                    console.log("Clicked on: " + closeNode);
+                    closeNode.clicked();
+                }
+            }
+
             clicked = false
             lerpValue = 0.2
 
             panning = false;
             panStart = null;
-            
-            if (p.mouseX < 0 || p.mouseX > p.width || p.mouseY < 0 || p.mouseY > p.height) {
-                return;
-            }
 
             p.cursor('auto');
-
-
-            let currentMousePos = getTrueMousePos(p);
-            let mousePosDiff = currentMousePos.dist(mouseStart);
-
-            if (mousePosDiff < 3 && panning == false) {
-                console.log("Clicked on: " + closeNode);
-                closeNode.clicked();
-
-            }
         }
 
         p.touchMoved = function () {
