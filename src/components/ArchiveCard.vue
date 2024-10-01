@@ -1,7 +1,7 @@
 <template>
 
   <div class="card">
-    <img src="../assets/homepage-images/yelena-cosmism.jpg" alt="Thumbnail" class="thumbnail">
+    <img v-bind:src="'/cosmic-archive-images/' + thumbnail + '.jpg'"  alt="Thumbnail" class="thumbnail">
     <div class="content">
       <div class="key-info">
         <slot name="key-info"></slot>
@@ -48,6 +48,7 @@ export default {
 .thumbnail {
   width: 100%;
   height: auto;
+  max-height: 50%;
 }
 
 .content {
