@@ -297,7 +297,7 @@ class Sketch {
             let currentMousePos = getTrueMousePos(p);
             let mousePosDiff = currentMousePos.dist(mouseStart);
 
-            if (clicked && mousePosDiff < 3 && panning == false) {
+            if (mousePosDiff < 3 && panning == false) {
                 console.log("Clicked on: " + closeNode);
                 closeNode.clicked();
 
