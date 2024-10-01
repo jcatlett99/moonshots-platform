@@ -57,11 +57,11 @@ const routes = [
     name: "nodegraphfull",
     component: NodeGraphFullView,
   },
-  {
-    path: "/debug",
-    name: "debug",
-    component: DebugView,
-  }
+  // {
+  //   path: "/debug",
+  //   name: "debug",
+  //   component: DebugView,
+  // }
 ];
 
 const router = createRouter({
