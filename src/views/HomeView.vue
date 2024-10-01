@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <Hero imageSrc="/homepage-images/yelena-cosmism.jpg" mainText="We are already in space" subText="-miha turšič">
+    <Hero imageSrc="/homepage-images/yelena-cosmism.jpg" mainText="“We are already in space”" subText="- Miha Turšič">
     </Hero>
     <!-- <EventCard></EventCard> -->
 

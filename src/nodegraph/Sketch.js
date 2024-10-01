@@ -228,6 +228,10 @@ class Sketch {
         }
 
         p.touchStarted = function () {
+            if (p.mouseX < 0 || p.mouseX > p.width || p.mouseY < 0 || p.mouseY > p.height) {
+                return;
+            }
+
             // console.log("touch started");
             let trueMousePos = getTrueMousePos(p);
             console.log("x " + trueMousePos.x, "ÿ: " + trueMousePos.y);
@@ -236,9 +240,7 @@ class Sketch {
             mouseStart = trueMousePos.copy();
 
 
-            if (p.mouseX < 0 || p.mouseX > p.width || p.mouseY < 0 || p.mouseY > p.height) {
-                return;
-            }
+            
             let mousePos = trueMousePos.copy();
             // mousePos.div(zoomLevel);
             closeNodeMag = 5000;
@@ -279,22 +281,27 @@ class Sketch {
         }
 
         p.touchEnded = function () {
-
-            let currentMousePos = getTrueMousePos(p);
-            let mousePosDiff = currentMousePos.dist(mouseStart);
-
-            if (mousePosDiff < 3 && panning == false) {
-                console.log("Clicked on: " + closeNode);
-                closeNode.clicked();
-
-            }
-
             clicked = false
             lerpValue = 0.2
 
             panning = false;
             panStart = null;
+            
+            if (p.mouseX < 0 || p.mouseX > p.width || p.mouseY < 0 || p.mouseY > p.height) {
+                return;
+            }
+
             p.cursor('auto');
+
+
+            let currentMousePos = getTrueMousePos(p);
+            let mousePosDiff = currentMousePos.dist(mouseStart);
+
+            if (clicked && mousePosDiff < 3 && panning == false) {
+                console.log("Clicked on: " + closeNode);
+                closeNode.clicked();
+
+            }
         }
 
         p.touchMoved = function () {

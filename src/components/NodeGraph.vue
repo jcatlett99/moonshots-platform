@@ -10,7 +10,7 @@ body {
     flex-grow: 1;
     overflow: hidden;
     user-select: none;
-    
+    background-color: black;
 }
 </style>
 
