@@ -1,5 +1,12 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
+import ResearcherView from "../views/ResearcherView.vue";
+import DisciplineView from "../views/DisciplineView.vue";
+import ProjectView from "../views/ProjectView.vue";
+import DebugView from "../views/DebugView.vue";
+import NodeGraphView from "../views/NodeGraphView.vue";
+import NodeGraphFullView from "@/views/NodeGraphFullView.vue";
+
 import ArchiveView from "../views/ArchiveView.vue";
 
 const routes = [
@@ -21,13 +28,40 @@ const routes = [
   {
     path: "/archive",
     name: "archive",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: function () {
       return import(/* webpackChunkName: "about" */ "../views/ArchiveView.vue");
     },
   },
+  {
+    path: "/researcher/:id", // Dynamic segment
+    name: "researcher",
+    component: ResearcherView,
+  },
+  {
+    path: "/discipline/:id", // Dynamic segment
+    name: "discipline",
+    component: DisciplineView,
+  },
+  {
+    path: "/project/:id", // Dynamic segment
+    name: "project",
+    component: ProjectView,
+  },
+  {
+    path: "/nodegraph",
+    name: "nodegraph",
+    component: NodeGraphView,
+  },
+  {
+    path: "/nodegraphfull",
+    name: "nodegraphfull",
+    component: NodeGraphFullView,
+  },
+  // {
+  //   path: "/debug",
+  //   name: "debug",
+  //   component: DebugView,
+  // }
 ];
 
 const router = createRouter({

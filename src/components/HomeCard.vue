@@ -1,16 +1,13 @@
 <template>
 
     <div class="card">
-        <img src="../assets/homepage-images/yelena-cosmism.jpg" alt="Thumbnail" class="thumbnail">
+        <img v-bind:src="'/workshop-images/' + thumbnail + '.jpg'" alt="Thumbnail" class="thumbnail">
         <div class="content">
             <div class="key-info">
                 <slot name="key-info"></slot>
-                <p>Title: </p>
-                <p>Subtitle: </p>
             </div>
             <div class="text">
                 <slot name="text"></slot>
-                <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat.</p>
 
             </div>
         </div>
@@ -34,19 +31,20 @@ export default {
 <style scoped>
 
 .card {
-  border: 1px solid #ccc;
+  /* border: 1px solid #ccc; */
   overflow: hidden;
   height: 30em;
   width: 100%;
   display: flex;
 
-  box-shadow: 0 0 0.75rem rgb(85, 85, 85);
+  box-shadow: 0 0 0.2rem rgb(85, 85, 85);
 
-  background-color: #ccc;;
+  background-color: #24232b;;
 }
 
 .image-left {
   flex-direction: row;
+  
 }
 
 .image-left {
@@ -56,11 +54,16 @@ export default {
 .thumbnail {
   width: 50%;
   height: auto;
+
+  object-fit: cover;
 }
 
 .content {
   display: flex;
   flex-direction: column;
+
+  justify-content: space-between;
+
   padding: 16px;
   flex: 1;
   overflow: hidden;
@@ -71,7 +74,9 @@ export default {
   padding-right: 8px;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  white-space: wrap !important;
+
+  font-size: 1.5em;
 
   text-align: left;
 }
