@@ -1,9 +1,10 @@
 class Project{
 
-    constructor(title, undertitle, shortname, imageurl, descriptionHTML){
+    constructor(title, undertitle, shortname, date, imageurl, descriptionHTML){
         this.title = title;
         this.undertitle = undertitle;
         this.shortname = shortname.replaceAll(" ", "");
+        this.date = date;
         this.imageurl = imageurl;
         this.descriptionHTML = descriptionHTML;
 

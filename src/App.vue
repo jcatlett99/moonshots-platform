@@ -16,7 +16,7 @@
         <router-link :to="{ name: 'home' }">Home</router-link>
         <router-link :to="{ name: 'about' }">About</router-link>
         <router-link :to="{ name: 'nodegraph' }">Node Graph</router-link>
-        <router-link to="/archive">Archive</router-link>
+        <router-link :to="{ name: 'archive' }">Archive</router-link>
         <!-- <router-link :to="{ name: 'debug'}">Debug</router-link> -->
       </div>
     </nav>
