@@ -5,6 +5,20 @@ class Project{
         this.undertitle = undertitle;
         this.shortname = shortname.replaceAll(" ", "");
         this.date = date;
+
+        this.dateData = new Date(date);
+
+        if(typeof date == "string" || date instanceof String){
+            let correctDate = date;
+
+            if(date.length == 10){
+                correctDate = date[6] + date[7] + date[8] + date[9] + "-" + date[3] + date[4] + "-" + date[0] + date[1];
+            }
+
+            this.dateData = new Date(correctDate);
+
+        }
+
         this.imageurl = imageurl;
         this.descriptionHTML = descriptionHTML;
 
@@ -33,6 +47,10 @@ class Project{
             return null;
         else
             return this.all[id];
+    }
+
+    static byDate(){
+        return [...Project.all].sort((a,b) => b.dateData - a.dateData);
     }
 
     addResearcher(researcher){

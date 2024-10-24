@@ -43,7 +43,7 @@ export default {
         }
     },
     mounted() {
-        this.projects = Project.all;
+        this.projects = Project.byDate();
         this.processData();
     },
     computed: {
