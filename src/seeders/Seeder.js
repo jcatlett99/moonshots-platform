@@ -3,6 +3,7 @@ import DisciplineSeeder from './DisciplineSeeder';
 import ResearcherDisciplineSeeder from './ResearcherDisciplineSeeder';
 import ProjectSeeder from './ProjectSeeder';
 import ProjectResearcherDisciplineSeeder from './ProjectResearcherDisciplineSeeder';
+import EventSeeder from './EventSeeder';
 
 class Seeder{
     
@@ -12,6 +13,7 @@ class Seeder{
         ResearcherDisciplineSeeder.seed();
         ProjectSeeder.seed();
         ProjectResearcherDisciplineSeeder.seed();
+        EventSeeder.seed();
     }
 }
 

@@ -28,6 +28,15 @@
                     </router-link>
                 </li>
             </ul>
+            <br>
+            <h2>Events</h2>
+            <ul>
+                <li v-for="event in events" :key="event.id">
+                    <router-link :to="{ name: 'event', params: {id: event.shortname }}">
+                        {{ event.title }}
+                    </router-link>
+                </li>
+            </ul>
         </ContentSection>
     </div>
 </template>
@@ -36,6 +45,7 @@ import ContentSection from "@/components/ContentSection.vue";
 import Researcher from "@/models/Researcher";
 import Discipline from "@/models/Discipline";
 import Project from "@/models/Project";
+import Event from "@/models/Event";
 
 export default {
     name: 'DebugView',
@@ -52,6 +62,7 @@ export default {
         this.researchers = Researcher.all;
         this.disciplines = Discipline.all;
         this.projects = Project.all;
+        this.events = Event.all;
     }
     
 }

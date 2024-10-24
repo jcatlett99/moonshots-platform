@@ -18,14 +18,13 @@
       </div>
     </Carousel>
     <div>
-      <HomeCard v-for="(event, index) in events" :key="index" :thumbnail="event.thumbnail"
-        :class="{ 'image-left': index % 2 === 0, 'image-right': index % 2 !== 0 }">
+      <HomeCard v-for="(event, index) in events" :key="index" :thumbnail="event.imageurl" :event="event" :class="{ 'image-left': index % 2 === 0, 'image-right': index % 2 !== 0 }">
         <template v-slot:key-info>
-          <p><strong>{{ event.keyInfo1 }}</strong> {{ event.value1 }}</p>
-          <p><strong>{{ event.keyInfo2 }}</strong> {{ event.value2 }}</p>
+          <p><strong>{{ event.title }}</strong></p>
+          <p><strong>{{ event.location }}</strong></p>
         </template>
         <template v-slot:text>
-          <p>{{ event.text }}</p>
+          <p>{{ event.descriptionHTML }}</p>
         </template>
         >
       </HomeCard>
@@ -41,6 +40,8 @@ import HomeCard from "@/components/HomeCard.vue";
 import Carousel from "@/components/Carousel.vue";
 import Hero from "@/components/Hero.vue";
 
+import Event from "@/models/Event";
+
 export default {
   name: "HomeView",
   components: {
@@ -51,6 +52,8 @@ export default {
     HomeCard,
   },
   data() {
+    let events = Event.byDate();
+
     return {
       cards: [
         {
@@ -82,26 +85,7 @@ export default {
           thumbnail: 'take-me-away',
           keyInfo1: 'Expedition - Take me Away!',
           text: "We are thrilled to announce our upcoming KOSMICA Expedition, a journey to explore the legendary UFO hotspots in the USA. From the infamous Roswell incident to the towns and museums that have embraced UFO culture, we'll spend five nights visiting the key places\nthat ignited one of our greatest questions: Are we alone?\nStories of close encounters are numerous, scholars publish books about UFOs, and top scientific institutions worldwide keep seeking evidence of ET communication. Artists worldwide have produced artworks about aliens, and musical movements were born using the mothership imaginary. This is why at KOSMICA we have curated an expedition to immerse ourselves in the debates and mysteries of ufology.\nJoin this KOSMICA Expedition and perhaps witness a sighting ourselves while shouting out loud: Take Me Away!"}
-      ],
-      events: [
-        {
-          thumbnail: 'toward-the-black-hole',
-          keyInfo1: 'Exhibition: Towards the Black Hole',
-          keyInfo2: 'Rijksmuseum Boerhaven',
-          text: "On March 21, 2024, Rijksmuseum Boerhaave in Leiden will open a new exhibition: Towards the Black Hole. Mysterious places in the cosmos that engulf everything, and from which nothing, not even light, can escape. They may be the most thrilling phenomena in the universe, and even scientists have yet to fully comprehend them.\n\nEveryone has heard of black holes and has some idea about them. The exciting, extreme characteristics of these places have inspired numerous stories, films, and games. Research has been conducted for decades, and the first image of a black hole is still fresh in our memories. But what exactly are black holes? Are they truly dangerous? Should we fear black holes? Is a black hole really a hole? In this new exhibition at Rijksmuseum Boerhaave, you will be guided step by step through this fascinating subject, so that by the end of your visit, you will have come a little closer to the black hole."
-        },
-        {
-          thumbnail: 'biohacking',
-          keyInfo1: 'BioHack en Fab: Academy Exhibition',
-          keyInfo2: 'Waag FuturLab',
-          text: "After the BioHack and Fab Academy courses conclude, a selection of the participants' works will still be displayed at an exhibition at the Waag on Friday, 14 and Saturday, June 15, between 12:00 and 17:00. Drop by and get inspired!\n\nIn the BioHack Academy, you will dive into shaping the future of biotechnology and learn how to build your own bio-lab, how to grow living 'factories', and how to code and document your experiments. Think about growing biomaterials like fuel, food, filaments, drugs, fragrances, fungi and more."
-        },
-        {
-          thumbnail: 'mechanical-turk',
-          keyInfo1: 'Expert Talk: Frank Piller - AI and working in creative teams',
-          keyInfo2: 'TU/e - JADS Den Bosch',
-          text: "In his talk, Frank Piller will delve into the fascinating intersection of AI and human creativity in the realm of innovation\bJoin us on February 6, 2024, for an Expert Talk by Prof. Frank Piller. In his 30-minute presentation, tailored for data scientists and practitioners, Frank Piller will delve into the fascinating intersection of artificial intelligence (AI) and human creativity in the realm of innovation. From automating ideation with OpenAI’s ChatGPT to leveraging generative adversarial networks (GANs) for rapid problem-solving and design, this talk will paint a picture of the hybrid teams emerging, where humans and machines collaborate in unprecedented ways."},
-      ]
+      ],events: events
     }
   }
 };

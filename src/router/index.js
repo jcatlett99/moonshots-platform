@@ -6,6 +6,7 @@ import ProjectView from "../views/ProjectView.vue";
 import DebugView from "../views/DebugView.vue";
 import NodeGraphView from "../views/NodeGraphView.vue";
 import NodeGraphFullView from "@/views/NodeGraphFullView.vue";
+import EventView from "../views/EventView.vue";
 
 import ArchiveView from "../views/ArchiveView.vue";
 
@@ -48,6 +49,11 @@ const routes = [
     component: ProjectView,
   },
   {
+    path: "/event/:id", // Dynamic segment
+    name: "event",
+    component: EventView,
+  },
+  {
     path: "/nodegraph",
     name: "nodegraph",
     component: NodeGraphView,
@@ -57,11 +63,11 @@ const routes = [
     name: "nodegraphfull",
     component: NodeGraphFullView,
   },
-  // {
-  //   path: "/debug",
-  //   name: "debug",
-  //   component: DebugView,
-  // }
+  {
+    path: "/debug",
+    name: "debug",
+    component: DebugView,
+  }
 ];
 
 const router = createRouter({

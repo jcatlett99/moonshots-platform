@@ -152,7 +152,7 @@ footer{
 
     /* display: flex;
     justify-content: center; */
-    margin-top: 2rem;
+    /* margin-top: 2rem; */
 }
 
 .widthconstrainer{
@@ -195,6 +195,11 @@ table {
 .breakable{
     word-break: break-all;
     word-wrap: break-word;
+}
+
+.line{
+    border-top: 1px solid var(--mid-shade);
+    margin: 1rem 0;
 }
 
 @media screen and (max-width: 768px) {

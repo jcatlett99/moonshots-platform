@@ -1,26 +1,32 @@
 <template>
 
     <div class="card">
-        <img v-bind:src="'/workshop-images/' + thumbnail + '.jpg'" alt="Thumbnail" class="thumbnail">
+        <img v-bind:src="thumbnail" alt="Thumbnail" class="thumbnail">
         <div class="content">
             <div class="key-info">
                 <slot name="key-info"></slot>
             </div>
             <div class="text">
                 <slot name="text"></slot>
-
             </div>
+            <router-link class="link" :to="{ name: 'event', params: {id: event.shortname }}">Event Information ></router-link>
         </div>
     </div>
 
 </template>
 
 <script>
+import router from '../router';
+
 export default {
   name: 'EventCard',
   props: {
     thumbnail: {
       type: String,
+      required: true
+    },
+    event:{
+      type: Object,
       required: true
     }
   }
@@ -88,5 +94,9 @@ export default {
   text-overflow: clip;
 
   text-align: left;
+}
+
+.link{
+  color: var(--accent-light);
 }
 </style>
