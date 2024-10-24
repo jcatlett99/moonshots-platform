@@ -36,6 +36,28 @@ class EventSeeder{
             "https://www.tue.nl/en/our-university/calendar-and-events/06-02-2024-expert-talk-frank-piller-ai-and-working-in-creative-teams",
             "2024-02-06"
         )
+
+        new Event(
+            "Exhibition: Cosmism - Images from a Future Gathering",
+            "Stedelijk Museum Amsterdam",
+            "cosmism",
+            "https://s3-eu-west-1.amazonaws.com/production-static-stedelijk/images/_whats%20on/tentoonstellingen/2024/Kosmisme/scaled/1440/006.SM-COSMISM%202024-PH.GJ.vanROOIJ%20kopie.jpg",
+            `The exhibition delves into Cosmism, an early-twentieth-century philosophical movement that sought humanity's salvation through technology, conquering death, and exploring outer space. Within a single exhibition space, the show offers a condensed journey into the utopian and dystopian realms of Cosmism. Cosmism features works from the Khardzhiev collection and recent acquisitions by Ukrainian artist Fedir Tetianych from the 1970s and 80s.`,
+            'https://www.stedelijk.nl/en/exhibitions/cosmism-images-from-a-future-gathering-en',
+            "2024-01-13",
+            "2024-03-03"
+        )
+
+        new Event(
+            "ASE Planetary Congress 2024",
+            "Amsterdam - Noordwijk",
+            "ase-planetary-congress",
+            "/workshop-images/ase.jpg",
+            `This year, something unique is going to happen in our country, in the field of space travel. Nearly a hundred astronauts from all over the world are coming to the Netherlands. A historical event. The astronauts catch up with each other and various experts share their knowledge. And young people show how they view the use of space technology for a healthy future of our planet. Innovation, collaboration, science and technology are central during all parts of the conference.`,
+            `https://ase2024.nl/en/`,
+            "2024-09-29",
+            "2024-10-06"
+        )
         
     }
 }
