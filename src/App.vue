@@ -5,7 +5,7 @@
         <router-link to="/" class="websitetitle flex">
           <img src="@/assets/logo-cosmic-transparent.png" alt="Cosmic integrationalists logo">
           <h2>
-            Platform for Cosmic Integrationalism
+            Platform for Cosmic Integrationalists
           </h2>
         </router-link>
       </div>
@@ -26,7 +26,7 @@
 
   <footer>
     <div class="widthconstrainer">
-      <p>Made with love by the Cosmic Integrationalism team.</p>
+      <p>Made with love by the Cosmic Integrationalists team.</p>
       <p>&copy; 2024</p>
     </div>
   </footer>
