@@ -73,6 +73,108 @@ class ProjectResearcherDisciplineSeeder{
                 new Researcher("Kimchi and Chips", "Kimchi and Chips")
             ]
         );
+
+        this.giveProjectDisciplineAndResearchers(
+            Project.dict.HUMANIDADESESPECIALES,
+            [
+                Discipline.dict.ARTISTICRESEARCH,
+                Discipline.dict.ASTRONOMY
+            ],
+            [
+                Researcher.dict.AWJOHNSON,
+            ]
+        );
+
+        this.giveProjectDisciplineAndResearchers(
+            Project.dict.SPACEARTMASTERCLASS,
+            [
+                Discipline.dict.ASTRONOMY
+            ],
+            [
+                Researcher.dict.NAHUM,
+            ]
+        );
+
+        this.giveProjectDisciplineAndResearchers(
+            Project.dict.SPIRITUALCOSMOS,
+            [
+                Discipline.dict.ASTRONOMY,
+                Discipline.dict.SPIRITUALITY,
+                Discipline.dict.PHILOSOPHY
+            ],
+            [
+                Researcher.dict.NAHUM,
+            ]
+        );
+
+        this.giveProjectDisciplineAndResearchers(
+            Project.dict.SPIRITUALCOSMOS,
+            [
+                Discipline.dict.ASTRONOMY,
+                Discipline.dict.SPIRITUALITY,
+                Discipline.dict.PHILOSOPHY
+            ],
+            [
+                Researcher.dict.NAHUM,
+            ]
+        );
+
+        this.giveProjectDisciplineAndResearchers(
+            Project.dict.SPACEASSEMBLY,
+            [
+                Discipline.dict.ASTRONOMY,
+                Discipline.dict.PHILOSOPHY,
+                
+            ],
+            [
+                Researcher.dict.ASBELLING,
+                Researcher.dict.BPUJALS,
+                Researcher.dict.LGUZMAN,
+                Researcher.dict.NBARSDORFLIEBCHEN,
+                Researcher.dict.NAHUM,
+            ]
+        );
+
+        this.giveProjectDisciplineAndResearchers(
+            Project.dict.COSMICAWE,
+            [
+                Discipline.dict.ASTRONOMY,
+                Discipline.dict.PHILOSOPHY,
+                Discipline.dict.ARTISTICRESEARCH
+
+                
+            ],
+            [
+                Researcher.dict.VVIGLIAR,
+                Researcher.dict.CPAXTON,
+            ]
+        );
+
+        this.giveProjectDisciplineAndResearchers(
+            Project.dict.SOLARACTION,
+            [
+                Discipline.dict.ASTRONOMY,
+                Discipline.dict.ARTISTICRESEARCH
+
+                
+            ],
+            [
+                Researcher.dict.ECHAPELA,
+            ]
+        );
+
+        this.giveProjectDisciplineAndResearchers(
+            Project.dict.INNERCOSMOS,
+            [
+                Discipline.dict.ASTRONOMY,
+                Discipline.dict.SPIRITUALITY
+
+                
+            ],
+            [
+                Researcher.dict.ECSARROYO,
+            ]
+        );
     }
 
     static giveProjectDisciplineAndResearchers(project, disciplines = [], researchers = []) {

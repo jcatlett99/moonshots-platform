@@ -125,6 +125,138 @@ class ResearcherSeeder{
             ],
             `She is a scientist and science communicator with extensive experience working with space science missions at ESA, in scientific support and outreach to different communities. In her current role she supports the Directorate’s Advisory Structure (working groups and committees) as well as individual projects, such as the Voyage 2050 process to define the science priorities for the next decades.`
         )
+
+        new Researcher(
+            "Anna Johnson",
+            "A. W. Johnson",
+            "PhD.",
+            "Researcher",
+            "https://www.iafastro.org/biographie/anne-w-johnson.html",
+            "",
+            [
+                "Universidade Iberoamericana"
+            ],
+        )
+
+        new Researcher(
+            "Nahum",
+            "Nahum",
+            "",
+            "Founding Director",
+            "www.nahum.xyz",
+            "nahum@kosmicainstitute.com",
+            [
+                "KOSMICA"
+            ],
+        )
+
+        new Researcher(
+            "Laura Harrington",
+            "L. Harrington",
+            "Dr.",
+            "Researcher, Artist",
+            "https://www.lauraharrington.co.uk/",
+            "dearlauraharrington@gmail.com",
+            [
+                "Northumbria University"
+            ],
+        )
+
+        new Researcher(
+            "Nicolette Barsdorf-Liebchen",
+            "N. Barsdorf Liebchen",
+            "Dr.",
+            "Researcher, Artist",
+            "https://staffprofiles.bournemouth.ac.uk/display/nbliebchen",
+            "bliebchen@bournemouth.ac.uk",
+            [
+                "Bournemouth University"
+            ],
+        )
+
+        new Researcher(
+            "Luis Guzman Martinez",
+            "L. Guzman",
+            "M.Sc",
+            "Researcher",
+            "https://researchportal.northumbria.ac.uk/en/persons/luis-guzman-martinez",
+            "",
+            [
+                "Northumbria University"
+            ],
+        )
+
+        new Researcher(
+            "Blanca Pujals",
+            "B. Pujals",
+            "M.Sc",
+            "Architect, Spatial Researcher, Writer, Filmmaker",
+            "https://www.blancapujals.com/",
+            "",
+            [
+                "Northumbria University"
+            ],
+        )
+
+        new Researcher(
+            "Anne-Sofie Belling",
+            "A. S. Belling",
+            "M.Sc",
+            "Researcher, Architecture",
+            "",
+            "",
+            [
+                "Newcastle University"
+            ],
+        )
+
+        new Researcher(
+            "Chris Paxton",
+            "C. Paxton",
+            "",
+            "Artist",
+            "https://www.instagram.com/chillingoutbigtime/?hl=en",
+            "",
+            [
+                ""
+            ],
+        )
+
+        new Researcher(
+            "Virginia Vigliar",
+            "V. Vigliar",
+            "",
+            "Writer, Curator, Researcher",
+            "https://www.virginiavigliar.com/",
+            "virginia.vigliar@gmail.com",
+            [
+                ""
+            ],
+        )
+
+        new Researcher(
+            "Emilio Chapela",
+            "E. Chapela",
+            "",
+            "Writer, Artist, Researcher",
+            "https://www.emiliochapela.com/",
+            "https://www.emiliochapela.com/contact",
+            [
+                ""
+            ],
+        )
+
+        new Researcher(
+            "Eva Cecilia Solís Arroyo",
+            "E. C. S. Arroyo",
+            "",
+            "Medicine Woman, Economist, Social Scientist",
+            "https://medicinaancestral.com/abuela-huitziehecatl-retrato-hablado/",
+            "",
+            [
+                "New School for Social Research en Nueva York"
+            ],
+        )
     }
 }
 

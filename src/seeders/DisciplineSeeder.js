@@ -87,6 +87,13 @@ class DisciplineSeeder{
             `<p>Artificial intelligence is the simulation of human intelligence processes by machines, especially computer systems. These processes include learning, reasoning, problem-solving, perception, and language-understanding.</p>`
         )
 
+        new Discipline(
+            "Spirituality",
+            "discipline-images/spirit.webp",
+            `<p>Spirituality involves the recognition of a feeling or sense or belief that there is something greater than myself, something more to being human than sensory experience, and that the greater whole of which we are part is cosmic or divine in nature.</p>`
+        )
+
+
     }
 }
 
