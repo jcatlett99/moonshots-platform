@@ -205,15 +205,6 @@ class ProjectSeeder{
             "Expedition"
         )
         new Project(
-            "Spiritual Cosmos with Nahum",
-            "undertitle",
-            "Spiritual Cosmos",
-            "31-01-2023",
-            "project-images/SpiritualCosmosBG.jpg",
-            "Join us on a celestial journey as we explore the rich intersection of spirituality and space. The Spiritual Cosmos, our new online course with Nahum, invites you to dive in and experience the timeless quest of finding the universe deep within.\nFrom ancient shamanic practices to the religions and rituals present in space missions, we will explore various ways humanity has sought to connect with the mysterious cosmos. As you gain a comprehensive understanding of this interdisciplinary relationship, we will invite you to awaken your own intimate relationship with the universe to instill wonder and connection.\nThe course will be accompanied by various readings and exercises. This includes the experience of hypnotic trance states and meditative journeys under Nahum’s guidance.\nJoin us in this course with the hope of finding new ways to live in harmony and connection with the universe.",
-            "Online"
-        )
-        new Project(
             "KOSMICA FIlm",
             "undertitle",
             "Kosmica Film 1",
