@@ -67,7 +67,7 @@ export default {
           keyInfo1: 'Children - Dream on Amazing Campaign',
           text: "We are thrilled to announce that KOSMICA will act as jury for Dream On Amazing global challenge to raise awareness of Earth’s environmental needs.\nDream On Amazing' is an educational initiative challenging high school students from various European countries, the US and Canada to design what they think the 'Future Classroom' should look like. Winners win for their school the new cork flooring 'Mars', tested by veteran astronaut Scott Kelly who has flown 4 missions in the new 'Walk on Amazing' campaign."},
         {
-          thumbnail: 'anais-1024x576',
+          thumbnail: 'anais',
           keyInfo1: 'Ethereal Things London',
           text: "“The Sun, the Moon, the Earth and its contents are material to form greater things, that is, ethereal things - greater things than the Creator himself has made” - John Keats, 1817\nKOSMICA: Ethereal Things is a weekend of events exploring our intimate human connection with particle physics and the physics of the universe. Experience impossible situations, encounter the mysterious realm of subatomic physics, and unravel the cosmic web through experiments, performances, music and poetics."},
         {

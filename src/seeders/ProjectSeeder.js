@@ -117,7 +117,7 @@ class ProjectSeeder{
         new Project(
             "Encouter: Solar Eclipse 2024",
             "undertitle",
-            "shortname",
+            "Encounter Solar Eclipse",
             "02-01-2024",
             "project-images/eclipse.jpg",
             "Join us from April 5th to 10th on an expedition to witness a unique cosmic spectacle: a total solar eclipse in Mexico! Be witness to one of the most anticipated astronomical events of this decade.\nThis cosmic dance will allow us to enjoy an extensive total solar eclipse in North America, lasting up to 2 minutes and 19 seconds. During this period, the Moon will slide between the Earth and the Sun, casting its shadow across the deserts of northern Mexico. As we contemplate this phenomenon, we will be captivated by the majesty of the solar corona, an ethereal halo of light emerging during darkness.\nThroughout the three days of the expedition, we will explore various places in the Coahuila desert, home to the largest dinosaur footprint in Mexico. Some of the places included in the experience are the picturesque village known as Estación Marte, famous for its inhabitants reporting sightings of UFOs and beings from other planets reaching the hill that gives the town its name. We will experience the eclipse in the legendary Dunas de Bilbao, the setting where Alejandro Jodorowsky filmed 'El Topo,' a cult film. We will explore the landscapes of Cañón de Fernández and the Laguna de Mayrán. All of this while staying in Parras de la Fuente, a magical town that will provide us with the opportunity to contemplate the celestial vault.",
@@ -126,7 +126,7 @@ class ProjectSeeder{
         new Project(
             "Space & Art Masterclass",
             "undertitle",
-            "shortname",
+            "Space Art Masterclass",
             "01-20-2024",
             "project-images/yelena-cosmism.jpg",
             "Over 5 weeks, Nahum, KOSMICA’s Director, will lead you on a journey to explore how artists have influenced space travel. All of this, while you learn the tools they've employed to envision our futures in space. Plus, Nahum will provide hands-on guidance as you develop your own space and art project.\nYou will learn how artists from various disciplines and across history envisioned humanity's journey beyond Earth. Even before space travel was possible, artists were already creating the artworks that inspired both scientists and engineers to make space travel possible. The aim of this masterclass is to highlight the importance of these types of artworks and to develop new ideas for humanity's journey in the Cosmos.\nThe masterclass is designed to equip you with the theory and practical aspects of space and art projects. You will gain deep insights into the historical relationship between art, culture, and space throughout history. From ancestral cultural expressions to contemporary approaches to space and art.\nFor more than a decade, Nahum has worked extensively with space agencies around the world, conducting space missions for artistic purposes, including zero gravity flights and the installation of the first interactive artwork in the International Space Station. With his experience, you will be supported in conceiving and producing your own space and art project. He will present the different strategies you can use to access the international space community, use space technologies, and collaborate with scientists, engineers, astronauts, and space organisations.\nAt KOSMICA we believe that artists and creatives can directly contribute to developing new visions that will revolutionise space travel with kindness, compassion, and creativity, as well as exploring new ways to connect and experience the Cosmos.",
@@ -232,7 +232,7 @@ class ProjectSeeder{
             "Atelier Gardens, Berlin"
         )
         new Project(
-            "Space Politics and Dancefloors",
+            "Space Politics and Dance Floors",
             "undertitle",
             "Space Politics and Dance",
             "01-11-2022",

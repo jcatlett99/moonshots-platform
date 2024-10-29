@@ -1,7 +1,7 @@
 <template>
 
     <div class="card">
-        <img v-bind:src="'/cosmic-archive-images/' + thumbnail + '.jpg'" alt="Thumbnail" class="thumbnail">
+        <img v-bind:src="'/project-images/' + thumbnail + '.jpg'" alt="Thumbnail" class="thumbnail">
         <div class="content">
             <div class="key-info">
                 <slot name="key-info"></slot>
