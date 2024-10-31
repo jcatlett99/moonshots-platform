@@ -7,6 +7,7 @@ import DebugView from "../views/DebugView.vue";
 import NodeGraphView from "../views/NodeGraphView.vue";
 import NodeGraphFullView from "@/views/NodeGraphFullView.vue";
 import EventView from "../views/EventView.vue";
+import ManifestoView from "../views/ManifestoView.vue";
 
 import ArchiveView from "../views/ArchiveView.vue";
 
@@ -25,6 +26,11 @@ const routes = [
     component: function () {
       return import(/* webpackChunkName: "about" */ "../views/AboutView.vue");
     },
+  },
+  {
+    path: "/manifesto",
+    name: "manifesto",
+    component: ManifestoView,
   },
   {
     path: "/archive",
